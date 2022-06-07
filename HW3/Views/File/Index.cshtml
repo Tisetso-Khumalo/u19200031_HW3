@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HW3.Models.FileModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h4>Documents </h4>
+<h5>".....Media/Documents/" folder</h5>
+
+<table class="table">
+    <thead style="background-color:black; color:white">
+        <tr>
+
+            <th>
+                FILE NAME
+            </th>
+            <th>
+                DOWNLOAD OPTION
+            </th>
+            <th>
+                DELETE OPTION
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    @Html.ActionLink("Download", "DownloadFile", new { fileName = item.FileName }, new { @class = "btn btn-sm btn-success" })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteFile", new { fileName = item.FileName }, new { @class = "btn btn-sm btn-danger" })
+                </td>
+            </tr>
+        }
+</tbody>
+</table>
+

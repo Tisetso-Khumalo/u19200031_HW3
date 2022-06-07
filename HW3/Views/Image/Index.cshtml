@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HW3.Models.FileModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Images</h2>
+<h3>".../Media/Images/" Folder</h3>
+<div class="row">
+@foreach (var item in Model)
+{
+<div class="col-md-3">
+    <a class="fancybox" data-fancybox="gallery" rel="gallery" href="~/Media/Images/@item.FileName"><img style="width:200px; height:200px" src="~/Media/Images/@item.FileName" /></a>
+        <p>@item.FileName</p>
+        <span>
+            @Html.ActionLink("Download", "DownloadFile", new { fileName = item.FileName }, new { @class = "btn btn-sm btn-success" })
+        </span>
+        <span>
+            @Html.ActionLink("Delete", "DeleteFile", new { fileName = item.FileName }, new { @class = "btn btn-sm btn-danger" })
+        </span>
+</div>
+}
+
+</div>

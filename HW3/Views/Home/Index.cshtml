@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div>
+    <h3>My media home page</h3>
+    <h4>The user can upload their media here </h4>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+
+                <h1>Description</h1><br/>
+                <p>This software allows the user to upload media to it. firstly they choose the type of media they want to upload and then upload it and they can go the respective pages of those
+                to view, Files, Images, and Videos and includes a view for my personal information and includes my image.</p>
+            </div>
+            <div class="col-lg-2">
+
+                <input type="radio" id="doc" name="File" value="Document">
+                <label for="age1">Document</label><br>
+                <input type="radio" id="img" name="File" value="Image">
+                <label for="age2">Image</label><br>
+                <input type="radio" id="vid" name="File" value="Video">
+                <label for="age3">Video</label><br><br>
+
+
+                <input type="file" id="myfile" name="myfile">
+                <br>
+
+                <input type="submit" value="Submit">
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+}
